@@ -1,11 +1,9 @@
 package com.example.taskmanager1.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.taskmanager1.R
+import com.example.taskmanager1.databinding.ItemTaskBinding
 import com.example.taskmanager1.models.Task
 
 class TaskAdapter(
@@ -13,19 +11,17 @@ class TaskAdapter(
     private val onTaskClick: (Task) -> Unit
 ) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
-    inner class TaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        private val titleTextView: TextView = view.findViewById(R.id.taskTitle)
-
+    inner class TaskViewHolder(private val binding: ItemTaskBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(task: Task) {
-            titleTextView.text = task.title
-            itemView.setOnClickListener { onTaskClick(task) }
+            binding.taskTitle.text = task.title
+            binding.taskDescription.text = task.description
+            binding.root.setOnClickListener { onTaskClick(task) }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_task, parent, false)
-        return TaskViewHolder(view)
+        val binding = ItemTaskBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return TaskViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {

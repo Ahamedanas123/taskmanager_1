@@ -26,7 +26,7 @@ object RetrofitClient {
         val jsonString = context.assets.open("db.json").bufferedReader().use { it.readText() }
 
         val mockRetrofit = Retrofit.Builder()
-            .baseUrl("http://10.0.2.2:8080/") // Required but unused
+            .baseUrl("http://192.168.127.52:8000/") // Required but unused
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

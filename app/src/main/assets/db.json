@@ -1,6 +1,10 @@
 {
   "tasks": [
-    { "id": 1, "title": "Buy groceries", "description": "Milk, Eggs, Bread", "isCompleted": false },
-    { "id": 2, "title": "Call Mom", "description": "Weekly catch-up", "isCompleted": true }
-  ]
+          {
+        "id": 1,
+        "title": "",
+        "description": "",
+        "isCompleted": false
+      }
+    ]
 }

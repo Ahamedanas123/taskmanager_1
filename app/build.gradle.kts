@@ -94,6 +94,7 @@ dependencies {
     implementation("androidx.room:room-runtime:2.6.1")
     implementation(libs.androidx.appcompat)
     implementation(libs.mediation.test.suite)
+    implementation(libs.androidx.foundation.android)
     kapt("androidx.room:room-compiler:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
 
